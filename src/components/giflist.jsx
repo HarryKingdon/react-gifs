@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
+import Gif from './gif';
 
 class GifList extends Component {
+  constructor(props) {
+    super(props);
+  }
   render = () => {
-    // here you need to display, within a column, a list of gifs. iterate on the list of gifs. you need a gif array.
-    // the gif array needs to be constructed by using the searchbar input and querying the giphy database
-    return <h1></h1>
+    return (
+      <div className="gif-list">
+        {this.props.gifs.map(gif => <Gif id={gif.id} key={gif.id} />)}
+      </div>
+    );
   }
 }
 
